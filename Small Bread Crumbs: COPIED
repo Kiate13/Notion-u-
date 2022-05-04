@@ -1,0 +1,60 @@
+/* remove icon margin */
+.notion-topbar .notranslate[style*='margin-right: 8px'] [role='button'] .notion-record-icon {
+  margin-right: 0 !important;
+}
+/* position page title */
+.notion-topbar .notranslate[style*='margin-right: 8px'] .notion-selectable:hover {
+  z-index: 999;
+}
+.notion-topbar .notranslate[style*='margin-right: 8px'] [role='button'] {
+  position: relative;
+}
+.notion-topbar
+  .notranslate[style*='margin-right: 8px']
+  [role='button']
+  .notion-record-icon
+  + div {
+  background: var(--theme--ui_interactive-active);
+  height: 24px;
+  padding: 0 6px;
+  border-radius: 3px;
+  position: absolute;
+  left: 26px;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+}
+.notion-topbar
+  .notranslate[style*='margin-right: 8px']
+  [role='button']
+  .notion-record-icon
+  + div {
+  transition: opacity 20ms ease-in, max-width 300ms ease-in !important;
+}
+/* slide out title on hover */
+.notion-topbar
+  .notranslate[style*='margin-right: 8px']
+  [role='button']:not(:hover)
+  .notion-record-icon
+  + div {
+  opacity: 0;
+  max-width: 0px !important;
+}
+.notion-topbar
+  .notranslate[style*='margin-right: 8px']
+  [role='button']:hover
+  .notion-record-icon
+  + div {
+  opacity: 1;
+}
+.notion-topbar
+  .notranslate[style*='margin-right: 8px']
+  [role='button']:hover
+  .notion-record-icon,
+.notion-topbar
+  .notranslate[style*='margin-right: 8px']
+  [role='button']:hover
+  .notion-record-icon
+  + div {
+  transition-delay: 200ms !important;
+}
